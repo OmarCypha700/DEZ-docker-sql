@@ -53,12 +53,6 @@ def ingest_data(pg_user, pg_password, pg_host, pg_port, pg_db, pg_table):
     engine = create_engine(f'postgresql://{pg_user}:{pg_password}@{pg_host}:{pg_port}/{pg_db}')
 
 
-    df_chunk = pd.read_csv(
-        url,
-        dtype=dtype,
-        parse_dates=parse_dates
-    )
-
     df_iter = pd.read_csv(
         url,
         dtype=dtype,
